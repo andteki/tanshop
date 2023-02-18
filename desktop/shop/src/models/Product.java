@@ -3,14 +3,14 @@ package models;
 public class Product {
     int id;
     String name;
-    String itemnumber;
+    String artnumber;
     int quantity;
     double price;
     String imagepath;
     public Product() {}
-    public Product(String name, String itemnumber, int quantity, double price, String imagepath) {
+    public Product(String name, String artnumber, int quantity, double price, String imagepath) {
         this.name = name;
-        this.itemnumber = itemnumber;
+        this.artnumber = artnumber;
         this.quantity = quantity;
         this.price = price;
         this.imagepath = imagepath;
@@ -27,16 +27,16 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
-    public String getItemNumber() {
-        return itemnumber;
+    public String getArtnumber() {
+        return artnumber;
     }
-    public void setItemNumber(String itemnumber) {
-        this.itemnumber = itemnumber;
+    public void setArtnumber(String artnumber) {
+        this.artnumber = artnumber;
     }
-    public int getCount() {
-        return this.quantity;
+    public int getQuantity() {
+        return quantity;
     }
-    public void setCount(int quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
     public double getPrice() {
@@ -45,5 +45,12 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
+    public String getImagepath() {
+        return imagepath;
+    }
+    public void setImagepath(String imagepath) {
+        this.imagepath = imagepath;
+    }
+    
     
 }

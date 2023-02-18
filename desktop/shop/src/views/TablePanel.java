@@ -35,25 +35,30 @@ public class TablePanel extends VBox{
         nameCol.setMinWidth(100);
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         
-        TableColumn<Product, String> itemNumberCol = new TableColumn<>("Cikkszám");
-        itemNumberCol.setMinWidth(50);
-        itemNumberCol.setCellValueFactory(new PropertyValueFactory<>("itemNumber"));
+        TableColumn<Product, String> artnumberCol = new TableColumn<>("Cikkszám");
+        artnumberCol.setMinWidth(50);
+        artnumberCol.setCellValueFactory(new PropertyValueFactory<>("artnumber"));
 
-        TableColumn<Product, Integer> countCol = new TableColumn<>("Darab");
-        countCol.setMinWidth(50);
-        countCol.setCellValueFactory(new PropertyValueFactory<>("count"));
+        TableColumn<Product, Integer> quantityCol = new TableColumn<>("Darab");
+        quantityCol.setMinWidth(50);
+        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         
         TableColumn<Product, Double> priceCol = new TableColumn<>("Ár");
         priceCol.setMinWidth(50);
         priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
 
+        TableColumn<Product, String> imagepathCol = new TableColumn<>("Kép útvonala");
+        imagepathCol.setMinWidth(50);
+        imagepathCol.setCellValueFactory(new PropertyValueFactory<>("imagepath"));
+
         tableView.setItems(this.getProducts());
 
         tableView.getColumns().add(idCol);
         tableView.getColumns().add(nameCol);
-        tableView.getColumns().add(itemNumberCol);
-        tableView.getColumns().add(countCol);
+        tableView.getColumns().add(artnumberCol);
+        tableView.getColumns().add(quantityCol);
         tableView.getColumns().add(priceCol);
+        tableView.getColumns().add(imagepathCol);
         
     }
     private ObservableList<Product> getProducts() {

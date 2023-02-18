@@ -36,7 +36,26 @@ public class AddPanel extends VBox {
         this.getChildren().add(this.imagepathInput);
         this.getChildren().add(this.buttonPanel);
     }
-    public ButtonPanel getButtonPanel() {
-        return this.buttonPanel;
+    public TitlePanel getTitlePanel() {
+        return titlePanel;
     }
+    public InputPanel getNameInput() {
+        return nameInput;
+    }
+    public InputPanel getArtnumberInput() {
+        return artnumberInput;
+    }
+    public InputPanel getQuantityInput() {
+        return quantityInput;
+    }
+    public InputPanel getPriceInput() {
+        return priceInput;
+    }
+    public InputPanel getImagepathInput() {
+        return imagepathInput;
+    }
+    public ButtonPanel getButtonPanel() {
+        return buttonPanel;
+    }
+
 }

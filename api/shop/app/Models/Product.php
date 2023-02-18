@@ -12,9 +12,10 @@ class Product extends Model
     protected $fillable = [
 
         "name",
-        "itemnumber",
+        "artnumber",
         "quantity",
-        "price"
+        "price",
+        "imagepath"
     ];
 
     public $timestamps = false;

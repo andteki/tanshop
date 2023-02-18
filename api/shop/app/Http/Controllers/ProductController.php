@@ -35,9 +35,10 @@ class ProductController extends BaseController {
         $validator = Validator::make( $product, [
 
             "name" => "required",
-            "itemnumber" => "required",
+            "artnumber" => "required",
             "quantity" => "required",
-            "price" => "required"
+            "price" => "required",
+            "imagepath" => "required"
         ]);
 
         if( $validator->fails() ) {
@@ -56,7 +57,7 @@ class ProductController extends BaseController {
         $validator = Validator::make( $input, [
 
             "name" => "required",
-            "itemnumber" => "required",
+            "artnumber" => "required",
             "quantity" => "required",
             "price" => "required"
         ]);

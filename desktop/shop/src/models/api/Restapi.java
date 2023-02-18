@@ -35,22 +35,22 @@ public class Restapi {
         String res = http.get(urlStr);
         return res;
     }
-    public void addProduct(String name, String artnumber, int quantity, double price, String imagepath) {
+    public void addProduct(Product product) {
         String endpoint = "products";
         String urlStr = this.host + endpoint;
         HttpClient http = new HttpClient();
 
-        Product productData = new Product(name, artnumber, quantity, price, imagepath);
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();
         Gson gson = builder.create();
-        String jsonData = gson.toJson(productData);
+        String jsonProduct = gson.toJson(product);
 
         HashMap<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         headers.put("Accept", "application/json");
+        headers.put("Authorization", "Bearer 1|D7kJN1v1CwIpBuZcSwHQDAnkvkWrvie4S9heKPf4");
 
-        String res = http.post(urlStr, jsonData, headers);
+        String res = http.post(urlStr, jsonProduct, headers);
         System.out.println(http.getResponseCode());
         System.out.println(res);
     }
