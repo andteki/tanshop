@@ -12,11 +12,23 @@ export class ApiService {
   getProducts() {
     let endpoint = 'products';
     let url = environment.apihost + endpoint;
-    return this.http.get<any>(url);
+
+    let token = localStorage.getItem('token');
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'applicaton/json',
+      'Authorization': 'Bearer ' + token
+    });
+
+    let httpOption = {
+      headers: headers
+    };
+
+    return this.http.get<any>(url, httpOption);
   }
 
   addProduct(data: any) {
-    let endpoint = 'products';
+    let endpoint = environment.addproducts;
     let url = environment.apihost + endpoint;
 
     let token = localStorage.getItem('token');
@@ -29,11 +41,12 @@ export class ApiService {
     let httpOption = {
       headers: headers
     };
+    // return this.http.post<any>(url, data);
     return this.http.post<any>(url, data, httpOption);
   }
 
   deleteProduct(id: number) {
-    let endpoint = 'delete';
+    let endpoint = environment.delproducts;
     let url = environment.apihost + endpoint + "/" + id;
     let token = localStorage.getItem('token');    
     let headers = new HttpHeaders({

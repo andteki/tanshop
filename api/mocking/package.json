@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx json-server --watch database.json"
+    "start": "hai-server --watch database.json --auth auth.json --routes routes.json --port 7000",
+    "json": "json-server --watch database.json --port 7000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "json-server": "^0.17.1"
+  "dependencies": {
+    "hai-server": "^0.0.4"
   }
 }

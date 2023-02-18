@@ -3,16 +3,37 @@
     {
       "id": 1,
       "name": "CPU",
-      "itemNumber": "aa33",
-      "count": 30,
+      "itemnumber": "aa33",
+      "quantity": 30,
       "price": 8
     },
     {
       "id": 2,
       "name": "egér",
-      "itemNumber": "bb42",
-      "count": 17,
+      "itemnumber": "bb42",
+      "quantity": 17,
       "price": 4.2
-    }  
+    },
+    {
+      "name": "egér",
+      "itemnumber": "834sfa",
+      "quantity": 24,
+      "price": 8,
+      "id": 4
+    },
+    {
+      "name": "egér",
+      "itemnumber": "834sfa",
+      "quantity": 24,
+      "price": 8,
+      "id": 5
+    },
+    {
+      "name": "egér",
+      "itemnumber": "834sfa",
+      "quantity": 21,
+      "price": 3,
+      "id": 6
+    }
   ]
 }

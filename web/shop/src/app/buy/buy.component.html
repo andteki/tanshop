@@ -1,0 +1,15 @@
+<h3>Termékeink</h3>
+
+<div *ngFor="let product of products;">
+    <div class="card m-3 float-start" style="width: 18rem;">
+        <img src="assets/cdrom01.png" class="card-img-top p-1" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">Egységár: {{product.price}} SW</p>
+            
+            <button class="btn btn-primary" (click)="tocart(product)">
+                Kosár
+            </button>
+        </div>
+    </div>
+</div>

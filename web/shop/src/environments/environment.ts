@@ -4,7 +4,12 @@
 
 export const environment = {
   production: false,
-  apihost: 'http://localhost:8000/api/'
+  apihost: 'http://localhost:8000/api/',
+  getproducts: 'products',
+  addproducts: 'products',
+  delproducts: 'products',
+  modproducts: 'products'
+  
 };
 
 /*

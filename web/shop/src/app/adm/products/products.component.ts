@@ -52,14 +52,14 @@ export class ProductsComponent implements OnInit {
     let data = {
       name: this.productForm.value.inputName,
       itemnumber: this.productForm.value.inputItemnumber,
-      quantity: this.productForm.value.inputQuantity,
-      price: this.productForm.value.inputPrice
+      quantity: Number(this.productForm.value.inputQuantity),
+      price: Number(this.productForm.value.inputPrice)
     };
     this.clearField();
     this.api.addProduct(data)
     .subscribe({
       next: (data:any) => {
-        console.log('vissza: ' + data);
+        console.log('vissza: ' + JSON.stringify(data));
         this.getProducts();
       },
       error: (err:any) => {
