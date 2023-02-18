@@ -11,19 +11,19 @@ import models.DataService;
 import models.Product;
 import models.api.Restapi;
 
-public class TablePanel extends VBox {
+public class TablePanel extends VBox{
     Label productLabel;
-    DataService dataService;    
-    TableView<Product> tableView;
+    DataService dataService;
     Restapi restapi;
+    TableView<Product> tableView;
     public TablePanel() {
-        this.productLabel = new Label("Termékek");
-        this.initTable();
+        productLabel = new Label("Termékek");
+        
         this.initData();
+        this.initTable();
         this.getChildren().add(productLabel);
         this.getChildren().add(tableView);
     }
-
     private void initTable() {
         tableView = new TableView<>();
         
@@ -57,7 +57,7 @@ public class TablePanel extends VBox {
         
     }
     private ObservableList<Product> getProducts() {
-        ObservableList <Product> productList = 
+        ObservableList<Product> productList = 
         FXCollections.observableArrayList(restapi.getProducts());
         return productList;
     }
@@ -70,5 +70,6 @@ public class TablePanel extends VBox {
         // ));
         // ArrayList<Product> productList = dataService.getProducts();
         // System.out.println(productList.get(0).getName());
-    }    
+    }
+    
 }
