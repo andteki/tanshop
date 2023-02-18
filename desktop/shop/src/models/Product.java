@@ -6,6 +6,15 @@ public class Product {
     String itemnumber;
     int quantity;
     double price;
+    String imagepath;
+    public Product() {}
+    public Product(String name, String itemnumber, int quantity, double price, String imagepath) {
+        this.name = name;
+        this.itemnumber = itemnumber;
+        this.quantity = quantity;
+        this.price = price;
+        this.imagepath = imagepath;
+    }
     public int getId() {
         return id;
     }

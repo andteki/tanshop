@@ -31,8 +31,8 @@ public class DataService {
             Product product = new Product();
             product.id = resultSet.getInt("id");
             product.name = resultSet.getString("name");
-            product.itemNumber = resultSet.getString("itemNumber");
-            product.count = resultSet.getInt("count");
+            product.itemnumber = resultSet.getString("itemnumber");
+            product.quantity = resultSet.getInt("quantity");
             product.price = resultSet.getDouble("price");
             productList.add(product);
         }
