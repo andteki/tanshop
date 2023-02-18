@@ -1,15 +1,15 @@
 package controllers;
 
 import views.MainTab;
-import views.MainView;
+import views.TablView;
 
 public class MainController {
 
-    MainView mainView;
+    TablView mainView;
     MainTab mainTab;
 
     public MainController() {
-        this.mainView = new MainView();
+        this.mainView = new TablView();
         this.mainTab = new MainTab(this.mainView);
         
     }

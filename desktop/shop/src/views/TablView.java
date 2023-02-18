@@ -11,12 +11,12 @@ import models.DataService;
 import models.Product;
 import models.api.Restapi;
 
-public class MainView extends VBox{
+public class TablView extends VBox{
     Label productLabel;
     DataService dataService;
     Restapi restapi;
     TableView<Product> tableView;
-    public MainView() {
+    public TablView() {
         productLabel = new Label("Termékek");
         
         this.initData();

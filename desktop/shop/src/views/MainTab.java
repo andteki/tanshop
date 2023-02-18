@@ -7,8 +7,8 @@ public class MainTab extends TabPane {
     Tab productTab;
     Tab loginTab;
     Tab registryTab;
-    MainView mainView;
-    public MainTab(MainView mainView ) {
+    TablView mainView;
+    public MainTab(TablView mainView ) {
         this.mainView = mainView;
         this.initComponent();
         this.addComponent();
