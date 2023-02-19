@@ -49,7 +49,7 @@ public class TablePanel extends VBox{
         imagepathCol.setMinWidth(50);
         imagepathCol.setCellValueFactory(new PropertyValueFactory<>("imagepath"));
 
-        tableView.setItems(this.getProducts());
+        this.getProducts();
 
         tableView.getColumns().add(idCol);
         tableView.getColumns().add(nameCol);
@@ -59,7 +59,7 @@ public class TablePanel extends VBox{
         tableView.getColumns().add(imagepathCol);
         
     }
-    private ObservableList<Product> getProducts() {
+    private ObservableList<Product> getProductsAsObservableList() {
         ObservableList<Product> productList = 
         FXCollections.observableArrayList(restapi.getProducts());
         return productList;
@@ -67,5 +67,7 @@ public class TablePanel extends VBox{
     private void initData() {
         this.restapi = new Restapi();
     }
-    
+    public void getProducts() {
+        tableView.setItems(this.getProductsAsObservableList());
+    }
 }

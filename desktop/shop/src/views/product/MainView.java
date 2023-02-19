@@ -14,4 +14,7 @@ public class MainView extends VBox{
     public ButtonPanel getButtonPanel() {
         return this.buttonPanel;
     }
+    public TablePanel getTablePanel() {
+        return tablePanel;
+    }
 }

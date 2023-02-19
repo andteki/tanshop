@@ -23,7 +23,6 @@ public class AddController {
     private void close() {
         Stage stage = (Stage) addPanel.getScene().getWindow();
         stage.close();
-        stage = null;
     }
     private void addProduct() {
         String name = addPanel.getNameInput().getValue();
@@ -36,5 +35,9 @@ public class AddController {
         Product product = new Product(name, artnumber, quantity, price, imagepath);
         Restapi api = new Restapi();
         api.addProduct(product);
+        this.refreshTable();
+    }
+    private void refreshTable() {
+        // addPanel.getParent().getParent().
     }
 }

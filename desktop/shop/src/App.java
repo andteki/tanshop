@@ -12,6 +12,7 @@ public class App extends Application {
 
         MainController mainController = new MainController();
         MainTab mainTab = mainController.getMainTab();
+        stage.setTitle("Shop editor");
         
         Scene scene = new Scene(mainTab, 600, 400);
         stage.setScene(scene);
