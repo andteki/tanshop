@@ -1,6 +1,5 @@
 package views.add;
 
-import controllers.AddController;
 import javafx.scene.layout.VBox;
 import views.InputPanel;
 
@@ -11,12 +10,9 @@ public class AddPanel extends VBox {
     InputPanel quantityInput;
     InputPanel priceInput;
     InputPanel imagepathInput;
-    ButtonPanel buttonPanel;
     public AddPanel() {
         this.initComponent();
         this.addComponent();
-        new AddController(this);
-        
     }
     private void initComponent() {
         this.titlePanel = new TitlePanel();
@@ -25,7 +21,6 @@ public class AddPanel extends VBox {
         this.quantityInput = new InputPanel("Mennyiség");
         this.priceInput = new InputPanel("Ár");
         this.imagepathInput = new InputPanel("Kép útvonala");
-        this.buttonPanel = new ButtonPanel();
     }
     private void addComponent() {
         this.getChildren().add(this.titlePanel);
@@ -34,7 +29,6 @@ public class AddPanel extends VBox {
         this.getChildren().add(this.quantityInput);
         this.getChildren().add(this.priceInput);
         this.getChildren().add(this.imagepathInput);
-        this.getChildren().add(this.buttonPanel);
     }
     public TitlePanel getTitlePanel() {
         return titlePanel;
@@ -54,8 +48,4 @@ public class AddPanel extends VBox {
     public InputPanel getImagepathInput() {
         return imagepathInput;
     }
-    public ButtonPanel getButtonPanel() {
-        return buttonPanel;
-    }
-
 }

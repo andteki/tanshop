@@ -8,11 +8,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import models.Product;
-import models.api.Restapi;
+import models.api.ProductApi;
 
 public class TablePanel extends VBox{
     Label productLabel;
-    Restapi restapi;
+    ProductApi restapi;
     TableView<Product> tableView;
     public TablePanel() {
         productLabel = new Label("Termékek");
@@ -65,9 +65,12 @@ public class TablePanel extends VBox{
         return productList;
     }
     private void initData() {
-        this.restapi = new Restapi();
+        this.restapi = new ProductApi();
     }
     public void getProducts() {
         tableView.setItems(this.getProductsAsObservableList());
+    }
+    public TableView<Product> getTableView() {
+        return this.tableView;
     }
 }

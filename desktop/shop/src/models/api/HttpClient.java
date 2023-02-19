@@ -69,6 +69,32 @@ public class HttpClient {
         String text = convertInputStreamToString(inputStream);
         return text;
     }
+    public String delete(String urlStr, HashMap<String, String> headers) {
+        String result = "";
+        try {
+            result = tryDelete(urlStr, headers);
+        } catch (IOException e) {
+            System.err.println("Hiba! A törlés a REST API-in nem sikerült");
+        }
+        return result;
+    }
+    private String tryDelete(String urlStr, HashMap<String, String> headers) 
+            throws IOException {
+        URL url = new URL(urlStr);
+        HttpURLConnection http = (HttpURLConnection) url.openConnection();
+        http.setRequestMethod("DELETE");
+        
+        for( Map.Entry<String, String> entry : headers.entrySet()) {
+            http.setRequestProperty(entry.getKey(), entry.getValue());
+        }
+        
+        http.setDoOutput(true);
+                
+        this.responseCode = http.getResponseCode();
+        InputStream inputStream = http.getInputStream();
+        String text = convertInputStreamToString(inputStream);
+        return text;
+    }
     private String convertInputStreamToString(InputStream inputStream) {
         String text;
         try {
