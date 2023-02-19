@@ -1,4 +1,4 @@
-package views.add;
+package views.product.add;
 
 import views.LabelPanel;
 

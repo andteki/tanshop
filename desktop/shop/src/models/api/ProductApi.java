@@ -20,8 +20,6 @@ public class ProductApi {
         this.host = this.pro.getProperty("restapi.host");
         http = new HttpClient();
     }
-
-
     public ArrayList<Product> getProducts() {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
@@ -64,5 +62,20 @@ public class ProductApi {
         headers.put("Authorization", "Bearer 1|D7kJN1v1CwIpBuZcSwHQDAnkvkWrvie4S9heKPf4");        
         
         this.http.delete(urlStr, headers);        
+    }
+    public void modifyProduct(Product product) {
+        String endpoint = "products";
+        String urlStr = this.host + endpoint + "/" + product.getId();
+
+        String jsonProduct = Converter.objectToJsonText(product);
+
+        HashMap<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        headers.put("Accept", "application/json");
+        headers.put("Authorization", "Bearer 1|D7kJN1v1CwIpBuZcSwHQDAnkvkWrvie4S9heKPf4");
+
+        String res = this.http.put(urlStr, jsonProduct, headers);
+        System.out.println(http.getResponseCode());
+        System.out.println(res);        
     }
 }

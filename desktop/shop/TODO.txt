@@ -2,3 +2,4 @@ TODO: Ha nincs jelen API azért még induljon el.
 TODO: A registry fül helyett, inkább Felhasználók fül, és egy felugró ablak lenne a registry.
 TODO: Nincs beléptetés.
 TODO: A hozzáadáshoz a token be van égetve egy token. 
+TODO: Törlésnél nem nézi, hogy ki van-e jelölve valami.

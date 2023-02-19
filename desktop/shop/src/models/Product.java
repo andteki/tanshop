@@ -15,6 +15,14 @@ public class Product {
         this.price = price;
         this.imagepath = imagepath;
     }
+    public Product(int id, String name, String artnumber, int quantity, double price, String imagepath) {
+        this.id = id;
+        this.name = name;
+        this.artnumber = artnumber;
+        this.quantity = quantity;
+        this.price = price;
+        this.imagepath = imagepath;
+    }
     public int getId() {
         return id;
     }

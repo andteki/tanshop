@@ -1,4 +1,4 @@
-package views.add;
+package views.product.add;
 
 import javafx.scene.layout.VBox;
 import views.InputPanel;
