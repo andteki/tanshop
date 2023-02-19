@@ -7,14 +7,14 @@ import java.util.HashMap;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import models.Pro;
+import models.ShopProperti;
 import models.Product;
 
 public class Restapi {
-    Pro pro;
+    ShopProperti pro;
     String host;
     public Restapi() {
-        this.pro = new Pro();
+        this.pro = new ShopProperti();
         this.host = this.pro.getProperty("restapi.host");
     }
 

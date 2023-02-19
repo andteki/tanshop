@@ -1,4 +1,4 @@
-package views;
+package views.product;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,13 +7,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
-import models.DataService;
 import models.Product;
 import models.api.Restapi;
 
 public class TablePanel extends VBox{
     Label productLabel;
-    DataService dataService;
     Restapi restapi;
     TableView<Product> tableView;
     public TablePanel() {
@@ -68,13 +66,6 @@ public class TablePanel extends VBox{
     }
     private void initData() {
         this.restapi = new Restapi();
-        // dataService = new DataService(new MariadbDatabase(
-        //     "shop",
-        //     "shop",
-        //     "titok"
-        // ));
-        // ArrayList<Product> productList = dataService.getProducts();
-        // System.out.println(productList.get(0).getName());
     }
     
 }

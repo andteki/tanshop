@@ -2,8 +2,8 @@ package controllers;
 
 import javafx.scene.control.Button;
 import views.MainTab;
-import views.MainView;
 import views.add.AddStage;
+import views.product.MainView;
 
 public class MainController {
 

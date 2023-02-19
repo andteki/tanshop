@@ -1,0 +1,3 @@
+TODO: A registry fül helyett, inkább Felhasználók fül, és egy felugró ablak lenne a registry.
+TODO: Nincs beléptetés.
+TODO: A hozzáadáshoz a token be van égetve egy token. 

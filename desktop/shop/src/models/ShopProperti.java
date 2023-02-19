@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class Pro {
+public class ShopProperti {
     String configFileName;
     Properties properties;
-    public Pro() {
+    public ShopProperti() {
         this.configFileName = "config.properties";
         properties = new Properties();
     }

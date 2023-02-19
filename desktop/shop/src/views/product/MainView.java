@@ -1,4 +1,4 @@
-package views;
+package views.product;
 
 import javafx.scene.layout.VBox;
 
