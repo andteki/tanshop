@@ -42,7 +42,6 @@ public class MainController {
         modifyButton.setOnAction(e -> {
             this.onActionModifyButton();
         });
-
     }
     private void onActionAddButton() {
         System.out.println("Hozzáadás...");

@@ -15,10 +15,12 @@ public class ProductApi {
     ShopProperti pro;
     String host;
     HttpClient http;
+    String bearerToken;
     public ProductApi() {
         this.pro = new ShopProperti();
         this.host = this.pro.getProperty("restapi.host");
         http = new HttpClient();
+        this.setBearerToken("1|D7kJN1v1CwIpBuZcSwHQDAnkvkWrvie4S9heKPf4");
     }
     public ArrayList<Product> getProducts() {
         GsonBuilder builder = new GsonBuilder();
@@ -45,7 +47,7 @@ public class ProductApi {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         headers.put("Accept", "application/json");
-        headers.put("Authorization", "Bearer 1|D7kJN1v1CwIpBuZcSwHQDAnkvkWrvie4S9heKPf4");
+        headers.put("Authorization", this.bearerToken);
 
         String res = http.post(urlStr, jsonProduct, headers);
         System.out.println(http.getResponseCode());
@@ -59,7 +61,7 @@ public class ProductApi {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         headers.put("Accept", "application/json");
-        headers.put("Authorization", "Bearer 1|D7kJN1v1CwIpBuZcSwHQDAnkvkWrvie4S9heKPf4");        
+        headers.put("Authorization", this.bearerToken);        
         
         this.http.delete(urlStr, headers);        
     }
@@ -72,10 +74,13 @@ public class ProductApi {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         headers.put("Accept", "application/json");
-        headers.put("Authorization", "Bearer 1|D7kJN1v1CwIpBuZcSwHQDAnkvkWrvie4S9heKPf4");
+        headers.put("Authorization", this.bearerToken);
 
         String res = this.http.put(urlStr, jsonProduct, headers);
         System.out.println(http.getResponseCode());
         System.out.println(res);        
+    }
+    public void setBearerToken(String token) {
+        this.bearerToken = "Bearer " + token;
     }
 }
