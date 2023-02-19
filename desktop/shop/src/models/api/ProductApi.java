@@ -7,17 +7,17 @@ import java.util.HashMap;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import models.ShopProperti;
+import models.ShopProperty;
 import models.tools.Converter;
 import models.Product;
 
 public class ProductApi {
-    ShopProperti pro;
+    ShopProperty pro;
     String host;
     HttpClient http;
     String bearerToken;
     public ProductApi() {
-        this.pro = new ShopProperti();
+        this.pro = new ShopProperty();
         this.host = this.pro.getProperty("restapi.host");
         http = new HttpClient();
         this.setBearerToken("1|D7kJN1v1CwIpBuZcSwHQDAnkvkWrvie4S9heKPf4");
@@ -40,7 +40,6 @@ public class ProductApi {
     public void addProduct(Product product) {
         String endpoint = "products";
         String urlStr = this.host + endpoint;
-        HttpClient http = new HttpClient();
 
         String jsonProduct = Converter.objectToJsonText(product);
 
@@ -50,7 +49,7 @@ public class ProductApi {
         headers.put("Authorization", this.bearerToken);
 
         String res = http.post(urlStr, jsonProduct, headers);
-        System.out.println(http.getResponseCode());
+        System.out.println(this.http.getResponseCode());
         System.out.println(res);
     }
     public void delProduct(int id) {

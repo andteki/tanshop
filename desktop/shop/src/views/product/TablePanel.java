@@ -8,6 +8,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import models.Product;
+import models.ShopProperty;
+import models.api.CheckApi;
 import models.api.ProductApi;
 
 public class TablePanel extends VBox{
@@ -49,7 +51,12 @@ public class TablePanel extends VBox{
         imagepathCol.setMinWidth(50);
         imagepathCol.setCellValueFactory(new PropertyValueFactory<>("imagepath"));
 
-        this.getProducts();
+        ShopProperty pro = new ShopProperty();
+        String host = pro.getProperty("restapi.host");
+        CheckApi checkApi = new CheckApi();
+        if(checkApi.checkUrl(host)) {
+            this.getProducts();
+        }
 
         tableView.getColumns().add(idCol);
         tableView.getColumns().add(nameCol);
