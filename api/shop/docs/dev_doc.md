@@ -1,0 +1,3 @@
+# Fejlesztői dokumentáció
+
+Fejlesztés alatt

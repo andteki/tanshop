@@ -7,6 +7,7 @@ use App\Http\Controllers\BaseController as BaseController;
 use Validator;
 use App\Models\Product;
 use App\Http\Resources\Product as ProductResource;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends BaseController {
 
@@ -31,24 +32,28 @@ class ProductController extends BaseController {
 
     public function create( Request $request ) {
 
-        $product = $request->all();
-        $validator = Validator::make( $product, [
+        if (Auth::user()->is_admin == 1) {
+            $product = $request->all();
+            $validator = Validator::make( $product, [
 
-            "name" => "required",
-            "artnumber" => "required",
-            "quantity" => "required",
-            "price" => "required",
-            "imagepath" => "required"
-        ]);
+                "name" => "required",
+                "artnumber" => "required",
+                "quantity" => "required",
+                "price" => "required",
+                "imagepath" => "required"
+            ]);
 
-        if( $validator->fails() ) {
+            if( $validator->fails() ) {
+                return $this->sendError( $validator, "Hiba" );
+            }
 
-            return $this-sendError( $validator, "Hiba" );
+            $product = Product::create( $product );
+
+            return $this->sendResponse( new ProductResource( $product ), "üzenet" );
+        }else {
+            return "Hiba! Nem engedélyezett művelet!" ;
         }
-
-        $product = Product::create( $product );
-
-        return $this->sendResponse( new ProductResource( $product ), "üzenet" );
+        
     }
 
     public function update( Request $request, $id ) {
@@ -64,7 +69,7 @@ class ProductController extends BaseController {
 
         if( $validator->fails() ) {
 
-            return $this-sendError( $validator, "Hiba" );
+            return $this->sendError( $validator, "Hiba" );
         }
 
         $product = Product::find( $id );
